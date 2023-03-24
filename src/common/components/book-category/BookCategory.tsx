@@ -11,6 +11,7 @@ const BookCategory = (props: {
     <div className={classes.bookcategory}>
       <h2 className={classes["bookcategory-title"]}>{props.categoryName}</h2>
       <div className={classes["bookcategory-books"]}>
+        {/* TODO: this part can be a seperate component as it used in Search and Book Category */}
         <ol className={classes["books-grid"]}>
           {
             (Array.isArray(props.books) && props.books.length) ? (props.books.map((book: BookInterface) => {

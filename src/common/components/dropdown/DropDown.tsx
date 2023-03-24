@@ -28,6 +28,7 @@ const DropDown = (props: {
           Move to...
         </option>
         {
+          // TODO: please use implicit return
           categories.map((category) => {
             return <option key={category.value} value={category.value}>
               {category.text}

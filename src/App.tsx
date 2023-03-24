@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+    // TODO: remove unnecessary div
+    // TODO: add 404 page for invalid routes
     <div className="app">
       <BrowserRouter>
         <Routes>

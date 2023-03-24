@@ -20,8 +20,10 @@ const bookSlice = createSlice({
 
       state.allBooksPerCategory = action.payload.allBooksPerCategory;
     },
+    // TODO: Refactor this function to reduce its Cognitive Complexity
     searchForBooks(state: State, action) {
-
+      // TODO: u can use destructuring here for better readability
+      // const { booksForQuery } = action.payload;
       if (Array.isArray(action.payload.booksForQuery) && action.payload.booksForQuery.length) {
 
         const booksIdsPerIndex: {
@@ -36,9 +38,9 @@ const bookSlice = createSlice({
             const booksInCategory: Book[] = state.allBooksPerCategory[category as 'currentlyReading' | 'wantToRead' | 'read'];
   
             for (const book of booksInCategory) {
-  
+              // TODO: remove this assertion is unnecessary since it does not change the type of the expression
+              // it can be like this: if (typeof booksIdsPerIndex[book.id] !== 'undefined') {
               if (typeof booksIdsPerIndex[(book as Book).id] !== 'undefined') {
-  
                 action.payload.booksForQuery[booksIdsPerIndex[(book as Book).id]].category = book.category;
               }
             }

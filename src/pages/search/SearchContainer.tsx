@@ -49,8 +49,10 @@ const SearchContainer = () => {
 
     const debouncedResults = useMemo(() => {
         return debounce(changeFilterValue, 500);
+    // TODO: changeFilterValue is a missing dependency of this effect
     }, []);
 
+    // TODO: useEffect should be used only for side effects. You can use useMemo instead if you want to return a value
     useEffect(() => {
         return () => {
             debouncedResults.cancel();
