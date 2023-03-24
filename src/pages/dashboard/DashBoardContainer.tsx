@@ -8,7 +8,7 @@ import DashBoard from './DashBoard';
 const DashBoardContainer = () => {
 
   const dispatch = useDispatch();
-
+  // TODO: replace any and add the correct type
   const allBooksPerCategory: BooksCategories = useSelector((state: any) => state.books.allBooksPerCategory);
 
   useEffect(() => {
@@ -19,10 +19,12 @@ const DashBoardContainer = () => {
 
   useEffect(() => {
     if (!allBooksPerCategory) {
+      // TODO: replace any and add the correct type
       dispatch(fetchBooks() as any);
     }
   }, [dispatch, allBooksPerCategory]);
 
+  // TODO: return the component Directly without using fragment or you can use fragment if you have more than one component
   return (
     <>
       <DashBoard booksPerCategory={allBooksPerCategory} />

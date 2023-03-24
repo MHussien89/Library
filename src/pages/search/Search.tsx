@@ -24,6 +24,7 @@ const Search: FC<{
     <>
       <div >
         <div className={classes["search-books-bar"]}>
+          {/* TODO: please use Link component from react-router-dom */}
           <a
             className={classes["close-search"]}
             onClick={goToOverview}
